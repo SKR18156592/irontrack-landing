@@ -37,8 +37,9 @@
     opacity: 0.45;
   }
   /* Phone frame shared by the hero and the showcase */
-  .phone { width: 100%; max-width: 300px; aspect-ratio: 9 / 19; border-radius: 40px; padding: 10px; background: #050608; border: 1px solid var(--line); }
+  .phone { width: 100%; max-width: 300px; aspect-ratio: 9 / 19; overflow: hidden; border-radius: 40px; padding: 10px; background: #050608; border: 1px solid var(--line); }
   .phone-short { aspect-ratio: 9 / 16; }
+  .phone-short .phone-screen { -webkit-mask-image: linear-gradient(black 86%, transparent); mask-image: linear-gradient(black 86%, transparent); }
   .phone-screen { height: 100%; border-radius: 31px; overflow: hidden; background: var(--surface); display: flex; flex-direction: column; font-size: 11px; line-height: 1.35; }
   .chip { display: inline-flex; align-items: center; gap: 6px; font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line); }
   a, button, input, select, summary { outline: none; }
