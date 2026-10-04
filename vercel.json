@@ -3,8 +3,12 @@
   "outputDirectory": "public",
   "headers": [
     {
-      "source": "/(styles.css|logo.svg|apple-touch-icon.png)",
+      "source": "/(logo.svg|apple-touch-icon.png|og-image.png)",
       "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400" }]
+    },
+    {
+      "source": "/styles.css",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }]
     }
   ]
 }
