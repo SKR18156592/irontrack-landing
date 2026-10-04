@@ -64,6 +64,16 @@
   .btn-glow:hover { box-shadow: 0 14px 44px -8px rgba(46, 230, 240, .55); transform: translateY(-1px); }
   .feature-num { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--accent); display: inline-flex; align-items: center; gap: 10px; }
   .feature-num::after { content: ''; width: 36px; height: 1px; background: linear-gradient(90deg, var(--accent), transparent); }
+  /* Muscle recovery map (artwork from the app) */
+  .body-fig { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .body-fig figcaption { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); }
+  .body-fig .bp { fill: rgba(148, 163, 184, .2); }
+  .body-fig .bh { fill: rgba(148, 163, 184, .38); }
+  .body-fig .mz { fill: rgba(148, 163, 184, .34); transition: fill .45s ease; }
+  .body-fig .mz[data-status='fresh'] { fill: var(--fresh); fill-opacity: .85; }
+  .body-fig .mz[data-status='recovering'] { fill: var(--warn); fill-opacity: .9; }
+  .body-fig .mz[data-status='fatigued'] { fill: var(--hot); fill-opacity: .92; }
+  [data-rec][aria-pressed='true'] { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
   /* Floating callouts beside the hero phone */
   @keyframes float { 0%, 100% { transform: translateY(0) } 50% { transform: translateY(-8px) } }
   .float { animation: float 6s ease-in-out infinite; }
