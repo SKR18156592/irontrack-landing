@@ -51,4 +51,16 @@
   @keyframes pulse-dot { 0%, 100% { opacity: 1 } 50% { opacity: .35 } }
   .pulse { animation: pulse-dot 1.6s ease-in-out infinite; }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto } .pulse { animation: none } * { transition: none !important } }
+
+  /* Privacy policy and terms: long-form reading text. */
+  .legal { color: var(--muted); max-width: 68ch; }
+  .legal .lead { font-size: 1.125rem; color: var(--fg); }
+  .legal h2 { margin-top: 2.5rem; margin-bottom: 0.75rem; font-size: 1.25rem; font-weight: 700; color: var(--fg); }
+  .legal p, .legal ul { margin-top: 0.75rem; }
+  .legal ul { padding-left: 1.25rem; list-style: disc; }
+  .legal li { margin-top: 0.4rem; }
+  .legal li::marker { color: var(--accent); }
+  .legal strong { color: var(--fg); font-weight: 600; }
+  .legal a { color: var(--accent); text-underline-offset: 4px; }
+  .legal a:hover { text-decoration: underline; }
 }
