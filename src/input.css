@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Page tokens and the few styles Tailwind utilities don't cover. */
+@layer base {
+  /* Layout: a training logbook. Mono "set notation" labels, one cyan glow behind the phone, everything else quiet zinc. */
+  :root {
+    --bg: #08090c;          /* page */
+    --surface: #0f1116;     /* sections, cards */
+    --raised: #161922;      /* inputs, phone UI */
+    --line: #242833;        /* hairlines */
+    --fg: #eef0f4;          /* text */
+    --muted: #9399a6;       /* secondary text */
+    --accent: #2ee6f0;      /* IronTrack cyan, from the app */
+    --accent-soft: rgba(46, 230, 240, 0.12);
+    --accent-glow: rgba(46, 230, 240, 0.28);
+    --ink: #031417;         /* text on accent */
+    --fresh: #4ade80;       /* recovery: ready */
+    --warn: #fbbf24;        /* recovery: recovering */
+    --hot: #f87171;         /* recovery: fatigued */
+    color-scheme: dark;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--fg); font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 16px; line-height: 1.6; }
+  h1, h2, h3 { text-wrap: balance; }
+  .display { font-family: Archivo, 'Arial Narrow', sans-serif; font-variation-settings: 'wdth' 112; letter-spacing: -0.02em; }
+  .eyebrow { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+  .tnum { font-variant-numeric: tabular-nums; }
+  .glow { box-shadow: 0 0 0 1px var(--line), 0 30px 80px -20px var(--accent-glow); }
+  .accent-soft { background: var(--accent-soft); }
+  .grid-paper {
+    background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse at 70% 30%, black 10%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse at 70% 30%, black 10%, transparent 70%);
+    opacity: 0.45;
+  }
+  /* Phone frame shared by the hero and the showcase */
+  .phone { width: 100%; max-width: 300px; aspect-ratio: 9 / 19; border-radius: 40px; padding: 10px; background: #050608; border: 1px solid var(--line); }
+  .phone-screen { height: 100%; border-radius: 31px; overflow: hidden; background: var(--surface); display: flex; flex-direction: column; font-size: 11px; line-height: 1.35; }
+  .chip { display: inline-flex; align-items: center; gap: 6px; font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line); }
+  a, button, input, select, summary { outline: none; }
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible { box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent); border-radius: 8px; }
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+  details[open] .faq-plus { transform: rotate(45deg); }
+  .faq-plus { transition: transform .2s ease; }
+  .snap-row { scroll-snap-type: x mandatory; }
+  .snap-row > * { scroll-snap-align: center; }
+  @keyframes pulse-dot { 0%, 100% { opacity: 1 } 50% { opacity: .35 } }
+  .pulse { animation: pulse-dot 1.6s ease-in-out infinite; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto } .pulse { animation: none } * { transition: none !important } }
+}
