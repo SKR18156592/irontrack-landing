@@ -4,7 +4,7 @@
 
 /* Page tokens and the few styles Tailwind utilities don't cover. */
 @layer base {
-  /* Layout: a training logbook. Mono "set notation" labels, one cyan glow behind the phone, everything else quiet zinc. */
+  /* Layout: a training logbook. Mono "set notation" labels, cyan light pooling behind the key moments, quiet zinc elsewhere. */
   :root {
     --bg: #08090c;          /* page */
     --surface: #0f1116;     /* sections, cards */
@@ -38,6 +38,7 @@
   }
   /* Phone frame shared by the hero and the showcase */
   .phone { width: 100%; max-width: 300px; aspect-ratio: 9 / 19; border-radius: 40px; padding: 10px; background: #050608; border: 1px solid var(--line); }
+  .phone-short { aspect-ratio: 9 / 16; }
   .phone-screen { height: 100%; border-radius: 31px; overflow: hidden; background: var(--surface); display: flex; flex-direction: column; font-size: 11px; line-height: 1.35; }
   .chip { display: inline-flex; align-items: center; gap: 6px; font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line); }
   a, button, input, select, summary { outline: none; }
@@ -50,7 +51,30 @@
   .snap-row > * { scroll-snap-align: center; }
   @keyframes pulse-dot { 0%, 100% { opacity: 1 } 50% { opacity: .35 } }
   .pulse { animation: pulse-dot 1.6s ease-in-out infinite; }
-  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto } .pulse { animation: none } * { transition: none !important } }
+
+  /* Depth: soft light behind key areas, so sections aren't one flat black. */
+  .glass { background: color-mix(in srgb, var(--surface) 80%, transparent); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+  .aurora { position: absolute; border-radius: 999px; filter: blur(90px); pointer-events: none; }
+  .text-gradient { background: linear-gradient(100deg, var(--accent) 10%, #8ff7fb 55%, var(--accent) 90%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  /* Cards whose top edge catches the light */
+  .card-edge { border: 1px solid transparent; background: linear-gradient(var(--card-bg, var(--bg)), var(--card-bg, var(--bg))) padding-box, linear-gradient(165deg, rgba(46, 230, 240, .5), var(--line) 38%, var(--line)) border-box; }
+  .lift { transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+  .lift:hover { transform: translateY(-3px); box-shadow: 0 24px 50px -24px var(--accent-glow); }
+  .btn-glow { box-shadow: 0 10px 34px -10px var(--accent-glow); transition: box-shadow .2s ease, filter .2s ease, transform .2s ease; }
+  .btn-glow:hover { box-shadow: 0 14px 44px -8px rgba(46, 230, 240, .55); transform: translateY(-1px); }
+  .feature-num { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--accent); display: inline-flex; align-items: center; gap: 10px; }
+  .feature-num::after { content: ''; width: 36px; height: 1px; background: linear-gradient(90deg, var(--accent), transparent); }
+  /* Floating callouts beside the hero phone */
+  @keyframes float { 0%, 100% { transform: translateY(0) } 50% { transform: translateY(-8px) } }
+  .float { animation: float 6s ease-in-out infinite; }
+  .float-delay { animation-delay: -3s; }
+  /* Sections ease in as they scroll into view (only when JS runs, so nothing stays hidden without it) */
+  .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s cubic-bezier(.2, .7, .2, 1); }
+  .js .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto } .pulse, .float { animation: none } * { transition: none !important }
+    .js .reveal { opacity: 1; transform: none; }
+  }
 
   /* Privacy policy and terms: long-form reading text. */
   .legal { color: var(--muted); max-width: 68ch; }
