@@ -22,6 +22,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/styles.css" />
+    <script>document.documentElement.classList.add('js')</script>
   </head>
   <body>
 <!-- ============ NAV ============ -->
@@ -38,7 +39,7 @@
       <a href="#install" class="hover:text-fg">Install</a>
       <a href="#faq" class="hover:text-fg">FAQ</a>
     </div>
-    <a href="https://track-sr-8532.vercel.app/" class="rounded-full bg-accent px-4 py-2 text-sm font-bold text-ink hover:brightness-110">Launch app</a>
+    <a href="https://track-sr-8532.vercel.app/" class="btn-glow rounded-full bg-accent px-4 py-2 text-sm font-bold text-ink hover:brightness-110">Launch app</a>
   </nav>
 </header>
 
@@ -46,15 +47,17 @@
   <!-- ============ HERO ============ -->
   <section class="relative overflow-hidden">
     <div class="grid-paper pointer-events-none absolute inset-0" aria-hidden="true"></div>
-    <div class="relative mx-auto grid max-w-6xl items-center gap-12 px-4 pb-20 pt-14 sm:px-6 md:pt-20 lg:grid-cols-[1.15fr_0.85fr]">
+    <div class="aurora -top-40 right-[-10%] h-[520px] w-[620px] opacity-[0.16] lg:opacity-30" style="background: var(--accent)" aria-hidden="true"></div>
+    <div class="aurora -left-40 top-1/3 h-[360px] w-[420px] opacity-[0.12]" style="background: #6d5cff" aria-hidden="true"></div>
+    <div class="relative mx-auto grid max-w-6xl items-center gap-14 px-4 pb-24 pt-14 sm:px-6 md:pt-20 lg:grid-cols-[1.1fr_0.9fr]">
       <div class="min-w-0">
-        <span class="chip border-line bg-surface text-muted">
-          <span class="h-1.5 w-1.5 rounded-full bg-fresh"></span>
+        <span class="chip glass py-1 text-muted">
+          <span class="pulse h-1.5 w-1.5 rounded-full bg-fresh"></span>
           Free · Open source · No account needed
         </span>
-        <h1 class="display mt-6 text-[2.6rem] font-black leading-[0.98] sm:text-6xl lg:text-[4.4rem]">
+        <h1 class="display mt-6 text-[2.6rem] font-black leading-[0.98] sm:text-6xl lg:text-[3.3rem] xl:text-[3.6rem]">
           Every rep logged.<br />
-          <span class="text-accent">Even with no signal.</span>
+          <span class="text-gradient">Even with no signal.</span>
         </h1>
         <p class="mt-6 max-w-[34rem] text-lg text-muted">
           IronTrack is a workout tracker for people who train with a plan. It installs from your browser, saves every set
@@ -62,7 +65,7 @@
           across your devices are built in.
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
-          <a href="https://track-sr-8532.vercel.app/" class="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 font-bold text-ink hover:brightness-110">
+          <a href="https://track-sr-8532.vercel.app/" class="btn-glow inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 font-bold text-ink hover:brightness-110">
             Launch web app
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
           </a>
@@ -72,15 +75,24 @@
             View on GitHub
           </a>
         </div>
-        <dl class="mt-10 grid max-w-lg grid-cols-3 gap-4 border-t border-line pt-6 text-sm">
-          <div><dt class="text-muted">Works</dt><dd class="font-semibold">Offline</dd></div>
-          <div><dt class="text-muted">Runs on</dt><dd class="font-semibold">iOS · Android · Desktop</dd></div>
-          <div><dt class="text-muted">Your data</dt><dd class="font-semibold">JSON &amp; CSV export</dd></div>
+        <dl class="mt-10 grid max-w-2xl grid-cols-1 gap-3 text-sm sm:grid-cols-[1fr_1.35fr_1fr]">
+          <div class="glass rounded-2xl border border-line px-4 py-3"><dt class="text-xs text-muted">Works</dt><dd class="mt-0.5 font-semibold">Offline, every time</dd></div>
+          <div class="glass rounded-2xl border border-line px-4 py-3"><dt class="text-xs text-muted">Runs on</dt><dd class="mt-0.5 font-semibold">iOS · Android · Desktop</dd></div>
+          <div class="glass rounded-2xl border border-line px-4 py-3"><dt class="text-xs text-muted">Your data</dt><dd class="mt-0.5 font-semibold">JSON &amp; CSV export</dd></div>
         </dl>
       </div>
 
       <!-- Hero phone: the workout screen -->
-      <div class="flex justify-center lg:justify-end">
+      <div class="relative flex justify-center lg:justify-end">
+        <!-- Floating callouts (decorative; the phone carries the same information) -->
+        <div class="float glass absolute left-0 top-16 z-10 hidden items-center gap-3 rounded-2xl border border-line px-4 py-3 shadow-2xl sm:flex lg:-left-6" aria-hidden="true">
+          <span class="accent-soft grid h-9 w-9 place-items-center rounded-xl text-lg">🏆</span>
+          <span><span class="block text-sm font-bold">New PR</span><span class="block font-mono text-xs text-muted tnum">82.5 kg × 10</span></span>
+        </div>
+        <div class="float float-delay glass absolute bottom-28 left-0 z-10 hidden items-center gap-3 rounded-2xl border border-line px-4 py-3 shadow-2xl sm:flex lg:-left-10" aria-hidden="true">
+          <span class="grid h-9 w-9 place-items-center rounded-xl" style="background: rgba(251, 191, 36, .14)"><span class="h-2.5 w-2.5 rounded-full bg-warn"></span></span>
+          <span><span class="block text-sm font-bold">No signal</span><span class="block font-mono text-xs text-muted">Saved on device ✓</span></span>
+        </div>
         <div class="phone glow" role="img" aria-label="IronTrack's workout screen: a session timer, an exercise card with today's suggested weight, and logged sets with a PR badge">
           <div class="phone-screen">
             <div class="flex items-center justify-between border-b border-line px-4 pb-2 pt-4">
@@ -108,6 +120,14 @@
             </div>
             <div class="mx-3 mt-2 rounded-2xl border border-line bg-raised p-3 opacity-70">
               <div class="flex items-baseline gap-2"><span class="font-mono text-[10px] text-muted">02</span><span class="font-bold">Cable Fly</span><span class="ml-auto font-mono text-[10px] text-muted">0/3</span></div>
+              <div class="mt-1 text-[10px] text-muted">Last: 22.5 kg × 12, 12, 11</div>
+            </div>
+            <div class="mx-3 mt-2 rounded-2xl border border-line bg-raised p-3 opacity-60">
+              <div class="flex items-baseline gap-2"><span class="font-mono text-[10px] text-muted">03</span><span class="font-bold">Lateral Raise</span><span class="ml-auto font-mono text-[10px] text-muted">0/4</span></div>
+              <div class="mt-1 text-[10px] text-muted">Superset with 04</div>
+            </div>
+            <div class="mx-3 mt-2 rounded-2xl border border-line bg-raised p-3 opacity-50">
+              <div class="flex items-baseline gap-2"><span class="font-mono text-[10px] text-muted">04</span><span class="font-bold">Triceps Pushdown</span><span class="ml-auto font-mono text-[10px] text-muted">0/3</span></div>
             </div>
             <div class="mt-auto flex items-center justify-center gap-3 bg-accent py-3 font-mono text-ink">
               <span class="text-[10px] font-semibold uppercase tracking-widest">Rest</span><span class="text-lg font-bold tnum">01:28</span>
@@ -119,15 +139,27 @@
   </section>
 
   <!-- ============ FEATURES ============ -->
-  <section id="features" class="border-t border-line bg-surface">
-    <div class="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-      <p class="eyebrow">What it does</p>
-      <h2 class="display mt-3 max-w-2xl text-4xl font-extrabold sm:text-5xl">Four things your notes app can't do between sets.</h2>
+  <section id="features" class="relative overflow-hidden border-t border-line bg-surface">
+    <div class="aurora left-[-15%] top-[38%] h-[420px] w-[520px] opacity-[0.08]" style="background: var(--accent)" aria-hidden="true"></div>
+    <div class="aurora right-[-15%] top-[70%] h-[380px] w-[480px] opacity-[0.08]" style="background: #6d5cff" aria-hidden="true"></div>
+    <div class="relative mx-auto max-w-6xl px-4 py-24 sm:px-6">
+      <div class="reveal grid items-end gap-8 lg:grid-cols-[1.2fr_0.8fr]">
+        <div>
+          <p class="eyebrow">What it does</p>
+          <h2 class="display mt-3 max-w-2xl text-4xl font-extrabold sm:text-5xl">Four things your notes app can't do between sets.</h2>
+        </div>
+        <ol class="grid grid-cols-2 gap-2 font-mono text-xs text-muted">
+          <li><a href="#offline" class="lift flex items-center gap-2 rounded-xl border border-line bg-bg px-3 py-2.5 hover:text-fg"><span class="text-accent">01</span>Offline-first</a></li>
+          <li><a href="#progression" class="lift flex items-center gap-2 rounded-xl border border-line bg-bg px-3 py-2.5 hover:text-fg"><span class="text-accent">02</span>Progression</a></li>
+          <li><a href="#nutrition" class="lift flex items-center gap-2 rounded-xl border border-line bg-bg px-3 py-2.5 hover:text-fg"><span class="text-accent">03</span>Nutrition</a></li>
+          <li><a href="#privacy" class="lift flex items-center gap-2 rounded-xl border border-line bg-bg px-3 py-2.5 hover:text-fg"><span class="text-accent">04</span>Privacy &amp; sync</a></li>
+        </ol>
+      </div>
 
       <!-- 1. Offline -->
-      <article class="mt-16 grid items-center gap-10 lg:grid-cols-2">
+      <article id="offline" class="reveal mt-20 grid scroll-mt-24 items-center gap-10 lg:grid-cols-2">
         <div class="min-w-0">
-          <p class="font-mono text-sm text-muted">Offline-first</p>
+          <p class="feature-num">01 · Offline-first</p>
           <h3 class="display mt-2 text-3xl font-extrabold">Basement gym, dead zone, airplane mode. It still saves.</h3>
           <p class="mt-4 max-w-[34rem] text-muted">
             Every set is written to your phone the moment you tap it, so there's no loading spinner between you and the
@@ -135,13 +167,13 @@
             Close the app mid-workout and your session is still there when you reopen it.
           </p>
           <ul class="mt-6 grid gap-2 text-sm">
-            <li class="flex gap-3"><span class="text-accent">→</span>Logging never waits on the network</li>
-            <li class="flex gap-3"><span class="text-accent">→</span>An unfinished session survives a reload or the phone closing the app</li>
-            <li class="flex gap-3"><span class="text-accent">→</span>Launches with no connection after the first visit</li>
+            <li class="flex gap-3"><span class="accent-soft mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full text-[11px] text-accent">✓</span>Logging never waits on the network</li>
+            <li class="flex gap-3"><span class="accent-soft mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full text-[11px] text-accent">✓</span>An unfinished session survives a reload or the phone closing the app</li>
+            <li class="flex gap-3"><span class="accent-soft mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full text-[11px] text-accent">✓</span>Launches with no connection after the first visit</li>
           </ul>
         </div>
         <!-- Interactive: offline demo -->
-        <div class="min-w-0 rounded-3xl border border-line bg-bg p-5 sm:p-6" aria-labelledby="offlineDemoTitle">
+        <div class="card-edge min-w-0 rounded-3xl p-5 shadow-2xl sm:p-6" aria-labelledby="offlineDemoTitle">
           <div class="flex flex-wrap items-center justify-between gap-3">
             <p id="offlineDemoTitle" class="font-semibold">Try it: log a set offline</p>
             <button id="netToggle" type="button" class="chip cursor-pointer py-1 text-sm" aria-pressed="false">
@@ -161,9 +193,9 @@
       </article>
 
       <!-- 2. Progression -->
-      <article id="progression" class="mt-24 grid items-start gap-10 lg:grid-cols-2">
+      <article id="progression" class="reveal mt-28 grid scroll-mt-24 items-start gap-10 lg:grid-cols-2">
         <div class="min-w-0 lg:order-2">
-          <p class="font-mono text-sm text-muted">Smart double progression</p>
+          <p class="feature-num">02 · Smart double progression</p>
           <h3 class="display mt-2 text-3xl font-extrabold">Walk in knowing the number.</h3>
           <p class="mt-4 max-w-[34rem] text-muted">
             IronTrack reads your last session on the same equipment and suggests today's weight. Hit the top of the rep
@@ -171,14 +203,14 @@
             the range at failure, and it drops about 5%. One tap fills the weight in.
           </p>
           <ul class="mt-6 grid gap-2 text-sm">
-            <li class="flex gap-3"><span class="text-accent">→</span>Last time's numbers next to every set</li>
-            <li class="flex gap-3"><span class="text-accent">→</span><span><strong class="text-fg">PR</strong> and <strong class="text-fg">↑ Beat last time</strong> badges as you finish sets</span></li>
-            <li class="flex gap-3"><span class="text-accent">→</span>Estimated 1RM, RIR and set tags (warm-up, drop set, failure)</li>
-            <li class="flex gap-3"><span class="text-accent">→</span>Supersets, saved set presets and a rest timer that beeps</li>
+            <li class="flex gap-3"><span class="accent-soft mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full text-[11px] text-accent">✓</span>Last time's numbers next to every set</li>
+            <li class="flex gap-3"><span class="accent-soft mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full text-[11px] text-accent">✓</span><span><strong class="text-fg">PR</strong> and <strong class="text-fg">↑ Beat last time</strong> badges as you finish sets</span></li>
+            <li class="flex gap-3"><span class="accent-soft mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full text-[11px] text-accent">✓</span>Estimated 1RM, RIR and set tags (warm-up, drop set, failure)</li>
+            <li class="flex gap-3"><span class="accent-soft mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full text-[11px] text-accent">✓</span>Supersets, saved set presets and a rest timer that beeps</li>
           </ul>
         </div>
         <!-- Interactive: the app's own suggestion rule -->
-        <form id="progForm" class="min-w-0 rounded-3xl border border-line bg-bg p-5 sm:p-6 lg:order-1" aria-labelledby="progTitle">
+        <form id="progForm" class="card-edge min-w-0 rounded-3xl p-5 shadow-2xl sm:p-6 lg:order-1" aria-labelledby="progTitle">
           <div class="flex flex-wrap items-center justify-between gap-3">
             <p id="progTitle" class="font-semibold">Last session → today</p>
             <label class="flex items-center gap-2 text-sm text-muted" for="repRange">Rep range
@@ -206,9 +238,9 @@
       </article>
 
       <!-- 3. Nutrition & recovery -->
-      <article class="mt-24 grid items-center gap-10 lg:grid-cols-2">
+      <article id="nutrition" class="reveal mt-28 grid scroll-mt-24 items-center gap-10 lg:grid-cols-2">
         <div class="min-w-0">
-          <p class="font-mono text-sm text-muted">Nutrition &amp; recovery</p>
+          <p class="feature-num">03 · Nutrition &amp; recovery</p>
           <h3 class="display mt-2 text-3xl font-extrabold">Targets that follow your body weight.</h3>
           <p class="mt-4 max-w-[34rem] text-muted">
             Set a goal (lose, maintain or build) and a weekly rate. IronTrack works out your calories and macros from your
@@ -216,14 +248,14 @@
             7-day average. If the trend drifts from your goal, it suggests a calorie change you can apply with one tap.
           </p>
           <ul class="mt-6 grid gap-2 text-sm">
-            <li class="flex gap-3"><span class="text-accent">→</span>Daily log for food, water and body weight</li>
-            <li class="flex gap-3"><span class="text-accent">→</span>Editable meal plans and your own foods</li>
-            <li class="flex gap-3"><span class="text-accent">→</span>Pre- and post-workout meal timing from your usual training time</li>
-            <li class="flex gap-3"><span class="text-accent">→</span>A muscle recovery map and weekly volume per muscle group</li>
+            <li class="flex gap-3"><span class="accent-soft mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full text-[11px] text-accent">✓</span>Daily log for food, water and body weight</li>
+            <li class="flex gap-3"><span class="accent-soft mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full text-[11px] text-accent">✓</span>Editable meal plans and your own foods</li>
+            <li class="flex gap-3"><span class="accent-soft mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full text-[11px] text-accent">✓</span>Pre- and post-workout meal timing from your usual training time</li>
+            <li class="flex gap-3"><span class="accent-soft mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full text-[11px] text-accent">✓</span>A muscle recovery map and weekly volume per muscle group</li>
           </ul>
         </div>
         <div class="grid min-w-0 gap-4 sm:grid-cols-2">
-          <div class="rounded-3xl border border-line bg-bg p-5">
+          <div class="card-edge lift rounded-3xl p-5">
             <p class="text-sm text-muted">Today's target</p>
             <p class="display mt-1 text-4xl font-black tnum">2,760 <span class="text-base font-semibold text-muted">kcal</span></p>
             <div class="mt-4 grid gap-2 font-mono text-xs tnum">
@@ -236,7 +268,7 @@
             </div>
             <p class="mt-4 text-[11px] leading-snug text-muted">Example: 30 years, 80 kg, 180 cm, moderately active, maintaining.</p>
           </div>
-          <div class="rounded-3xl border border-line bg-bg p-5">
+          <div class="card-edge lift rounded-3xl p-5">
             <p class="text-sm text-muted">Muscle recovery</p>
             <ul class="mt-3 grid gap-2.5 text-sm">
               <li class="flex items-center justify-between gap-2"><span>Chest</span><span class="chip text-hot"><span class="h-1.5 w-1.5 rounded-full bg-hot"></span>today</span></li>
@@ -251,9 +283,9 @@
       </article>
 
       <!-- 4. Privacy & sync -->
-      <article class="mt-24 grid items-center gap-10 lg:grid-cols-2">
+      <article id="privacy" class="reveal mt-28 grid scroll-mt-24 items-center gap-10 lg:grid-cols-2">
         <div class="min-w-0 lg:order-2">
-          <p class="font-mono text-sm text-muted">Privacy &amp; cloud sync</p>
+          <p class="feature-num">04 · Privacy &amp; cloud sync</p>
           <h3 class="display mt-2 text-3xl font-extrabold">Sign in only if you want sync.</h3>
           <p class="mt-4 max-w-[34rem] text-muted">
             Without an account, everything stays on your device. Sign in with email and password and your log follows you
@@ -261,12 +293,12 @@
             your history as JSON or CSV, or take a full backup, whenever you like.
           </p>
           <ul class="mt-6 grid gap-2 text-sm">
-            <li class="flex gap-3"><span class="text-accent">→</span>Sessions logged on two devices while offline are both kept</li>
-            <li class="flex gap-3"><span class="text-accent">→</span>Signing out on a shared device clears that account's data from it</li>
-            <li class="flex gap-3"><span class="text-accent">→</span>No ads and no tracking scripts</li>
+            <li class="flex gap-3"><span class="accent-soft mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full text-[11px] text-accent">✓</span>Sessions logged on two devices while offline are both kept</li>
+            <li class="flex gap-3"><span class="accent-soft mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full text-[11px] text-accent">✓</span>Signing out on a shared device clears that account's data from it</li>
+            <li class="flex gap-3"><span class="accent-soft mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full text-[11px] text-accent">✓</span>No ads and no tracking scripts</li>
           </ul>
         </div>
-        <div class="min-w-0 rounded-3xl border border-line bg-bg p-5 sm:p-6 lg:order-1">
+        <div class="card-edge min-w-0 rounded-3xl p-5 shadow-2xl sm:p-6 lg:order-1">
           <p class="font-semibold">Your devices</p>
           <ul class="mt-4 grid gap-3 text-sm">
             <li class="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-line bg-surface px-4 py-3">
@@ -289,17 +321,18 @@
   </section>
 
   <!-- ============ SHOWCASE ============ -->
-  <section class="border-t border-line">
-    <div class="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+  <section class="relative overflow-hidden border-t border-line">
+    <div class="aurora left-1/2 top-1/2 h-[460px] w-[720px] -translate-x-1/2 opacity-[0.14]" style="background: var(--accent)" aria-hidden="true"></div>
+    <div class="relative mx-auto max-w-6xl px-4 py-24 sm:px-6">
       <p class="eyebrow">Inside the app</p>
       <div class="mt-3 flex flex-wrap items-end justify-between gap-4">
         <h2 class="display max-w-2xl text-4xl font-extrabold sm:text-5xl">Made for one hand, between sets.</h2>
         <p class="max-w-sm text-muted">Big tap targets, one exercise open at a time, and the next one opens when you finish.</p>
       </div>
-      <div class="snap-row -mx-4 mt-12 flex gap-6 overflow-x-auto px-4 pb-4 md:mx-0 md:grid md:grid-cols-3 md:overflow-visible md:px-0">
+      <div class="reveal snap-row -mx-4 mt-14 flex gap-6 overflow-x-auto px-4 pb-4 md:mx-0 md:grid md:grid-cols-3 md:overflow-visible md:px-0">
         <!-- Nutrition -->
         <figure class="flex shrink-0 basis-[78%] flex-col items-center gap-4 sm:basis-[46%] md:basis-auto">
-          <div class="phone" role="img" aria-label="Nutrition screen with today's calories, macros and meals">
+          <div class="phone phone-short lift" role="img" aria-label="Nutrition screen with today's calories, macros and meals">
             <div class="phone-screen p-4">
               <p class="font-bold">Nutrition</p>
               <p class="text-[10px] text-muted">Training day · Build muscle, 0.25 kg/week</p>
@@ -316,16 +349,26 @@
                 <div class="flex justify-between rounded-xl border border-line bg-raised px-3 py-2"><span>💧 Water</span><span class="font-mono tnum">2.0 / 3.5 L</span></div>
                 <div class="flex justify-between rounded-xl border border-line bg-raised px-3 py-2"><span>⚖️ Weight</span><span class="font-mono tnum">80.4 kg</span></div>
               </div>
+              <div class="mt-3 rounded-2xl border border-line bg-raised p-3">
+                <div class="flex justify-between text-[10px]"><span class="text-muted">7-day average</span><span class="font-mono text-fresh tnum">+0.2 kg/wk</span></div>
+                <svg viewBox="0 0 200 44" class="mt-1 w-full" aria-hidden="true">
+                  <polyline points="4,36 34,33 64,34 94,28 124,26 154,22 196,16" fill="none" stroke="var(--fresh)" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" />
+                  <circle cx="196" cy="16" r="3.5" fill="var(--fresh)" />
+                </svg>
+              </div>
             </div>
           </div>
           <figcaption class="text-center text-sm text-muted"><strong class="text-fg">Nutrition.</strong> Targets, meal timing and the daily log.</figcaption>
         </figure>
         <!-- Analytics -->
         <figure class="flex shrink-0 basis-[78%] flex-col items-center gap-4 sm:basis-[46%] md:basis-auto">
-          <div class="phone" role="img" aria-label="Analytics screen with weekly volume per muscle group and an estimated 1RM trend">
+          <div class="phone phone-short glow lift md:-translate-y-8" role="img" aria-label="Analytics screen with weekly volume per muscle group and an estimated 1RM trend">
             <div class="phone-screen p-4">
               <p class="font-bold">Analytics</p>
               <p class="text-[10px] text-muted">Volume per muscle group · last 7 days</p>
+              <div class="mt-3 grid grid-cols-2 gap-1 rounded-xl border border-line bg-raised p-1 text-center text-[10px] font-semibold">
+                <span class="rounded-lg bg-accent py-1.5 text-ink">Last 7 days</span><span class="py-1.5 text-muted">Last 28 days</span>
+              </div>
               <div class="mt-3 grid gap-2 rounded-2xl border border-line bg-raised p-3 font-mono text-[10px] tnum">
                 <div class="grid grid-cols-[62px_1fr] items-center gap-2"><span>Chest</span><div class="h-2 w-[86%] rounded bg-accent"></div></div>
                 <div class="grid grid-cols-[62px_1fr] items-center gap-2"><span>Back</span><div class="h-2 w-[94%] rounded bg-accent"></div></div>
@@ -342,13 +385,20 @@
                 </svg>
                 <div class="flex justify-between font-mono text-[10px] text-muted tnum"><span>96 kg</span><span class="text-fg">110 kg</span></div>
               </div>
+              <p class="mt-4 text-[10px] text-muted">Recovery</p>
+              <div class="mt-1 flex flex-wrap gap-1.5">
+                <span class="chip text-[10px] text-hot"><span class="h-1.5 w-1.5 rounded-full bg-hot"></span>Chest</span>
+                <span class="chip text-[10px] text-warn"><span class="h-1.5 w-1.5 rounded-full bg-warn"></span>Legs</span>
+                <span class="chip text-[10px] text-fresh"><span class="h-1.5 w-1.5 rounded-full bg-fresh"></span>Back</span>
+                <span class="chip text-[10px] text-fresh"><span class="h-1.5 w-1.5 rounded-full bg-fresh"></span>Arms</span>
+              </div>
             </div>
           </div>
           <figcaption class="text-center text-sm text-muted"><strong class="text-fg">Analytics.</strong> Volume, 1RM trends and recovery.</figcaption>
         </figure>
         <!-- Tools -->
         <figure class="flex shrink-0 basis-[78%] flex-col items-center gap-4 sm:basis-[46%] md:basis-auto">
-          <div class="phone" role="img" aria-label="Tools screen with the plate calculator showing plates for 102.5 kg">
+          <div class="phone phone-short lift" role="img" aria-label="Tools screen with the plate calculator showing plates for 102.5 kg">
             <div class="phone-screen p-4">
               <p class="font-bold">Tools</p>
               <p class="text-[10px] text-muted">Plate calculator · 20 kg bar</p>
@@ -367,6 +417,11 @@
                 <div class="flex justify-between rounded-xl border border-line bg-raised px-3 py-2"><span>TDEE</span><span class="font-mono tnum">2,759 kcal</span></div>
                 <div class="flex justify-between rounded-xl border border-line bg-raised px-3 py-2"><span>Share card</span><span class="text-accent">Download</span></div>
               </div>
+              <div class="mt-3 rounded-2xl border border-line bg-raised p-3">
+                <p class="text-[10px] text-muted">Calorie calculator</p>
+                <div class="mt-1 flex items-baseline justify-between"><span class="font-mono tnum">80.4 kg · 180 cm</span><span class="text-[10px] text-muted">moderate</span></div>
+                <div class="mt-2 rounded-lg bg-accent py-1.5 text-center text-[10px] font-bold text-ink">Save weight to profile</div>
+              </div>
             </div>
           </div>
           <figcaption class="text-center text-sm text-muted"><strong class="text-fg">Tools.</strong> Plates, 1RM, TDEE and a stats card to share.</figcaption>
@@ -379,28 +434,28 @@
   <!-- ============ ENGINEERING ============ -->
   <section id="engineering" class="border-t border-line bg-surface">
     <div class="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-      <p class="eyebrow">How it works</p>
+      <p class="eyebrow reveal">How it works</p>
       <h2 class="display mt-3 max-w-3xl text-4xl font-extrabold sm:text-5xl">Built for lifters. Engineered for speed.</h2>
       <p class="mt-4 max-w-2xl text-muted">The phone is the source of truth. The cloud is a copy that keeps your devices in step.</p>
 
       <!-- Data flow -->
-      <div class="mt-12 overflow-x-auto">
+      <div class="reveal mt-12 overflow-x-auto">
         <ol class="flex min-w-[640px] items-stretch gap-3 font-mono text-sm">
-          <li class="flex-1 rounded-2xl border border-line bg-bg p-4"><p class="text-xs text-muted">You tap ✓</p><p class="mt-1 font-semibold">Set saved on device</p><p class="mt-2 text-xs text-muted">IndexedDB, instantly</p></li>
-          <li class="grid place-items-center text-accent" aria-hidden="true">→</li>
-          <li class="flex-1 rounded-2xl border border-line bg-bg p-4"><p class="text-xs text-muted">0.8 s later, if online</p><p class="mt-1 font-semibold">Only changes upload</p><p class="mt-2 text-xs text-muted">One row per session</p></li>
-          <li class="grid place-items-center text-accent" aria-hidden="true">→</li>
-          <li class="flex-1 rounded-2xl border border-line bg-bg p-4"><p class="text-xs text-muted">Supabase</p><p class="mt-1 font-semibold">Postgres + Realtime</p><p class="mt-2 text-xs text-muted">Row-level security</p></li>
-          <li class="grid place-items-center text-accent" aria-hidden="true">→</li>
-          <li class="flex-1 rounded-2xl border border-line bg-bg p-4"><p class="text-xs text-muted">Your other devices</p><p class="mt-1 font-semibold">Pull and merge</p><p class="mt-2 text-xs text-muted">Nothing overwritten</p></li>
+          <li class="card-edge lift flex-1 rounded-2xl p-4"><p class="text-xs text-accent">You tap ✓</p><p class="mt-1 font-semibold">Set saved on device</p><p class="mt-2 text-xs text-muted">IndexedDB, instantly</p></li>
+          <li class="grid place-items-center" aria-hidden="true"><span class="h-px w-6 bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent"></span></li>
+          <li class="card-edge lift flex-1 rounded-2xl p-4"><p class="text-xs text-accent">0.8 s later, if online</p><p class="mt-1 font-semibold">Only changes upload</p><p class="mt-2 text-xs text-muted">One row per session</p></li>
+          <li class="grid place-items-center" aria-hidden="true"><span class="h-px w-6 bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent"></span></li>
+          <li class="card-edge lift flex-1 rounded-2xl p-4"><p class="text-xs text-accent">Supabase</p><p class="mt-1 font-semibold">Postgres + Realtime</p><p class="mt-2 text-xs text-muted">Row-level security</p></li>
+          <li class="grid place-items-center" aria-hidden="true"><span class="h-px w-6 bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent"></span></li>
+          <li class="card-edge lift flex-1 rounded-2xl p-4"><p class="text-xs text-accent">Your other devices</p><p class="mt-1 font-semibold">Pull and merge</p><p class="mt-2 text-xs text-muted">Nothing overwritten</p></li>
         </ol>
       </div>
 
-      <div class="mt-10 grid gap-px overflow-hidden rounded-3xl border border-line bg-line sm:grid-cols-2">
-        <div class="bg-bg p-6"><p class="font-mono text-xs text-accent">LOCAL-FIRST</p><h3 class="mt-2 text-lg font-bold">IndexedDB, not a loading spinner</h3><p class="mt-2 text-sm text-muted">Workout history and the nutrition log live in IndexedDB on your device, with no 5 MB cap. Reads come from memory, so screens render instantly.</p></div>
-        <div class="bg-bg p-6"><p class="font-mono text-xs text-accent">NO FRAMEWORK</p><h3 class="mt-2 text-lg font-bold">Vanilla JavaScript, three dependencies</h3><p class="mt-2 text-sm text-muted">Plain ES modules bundled by Vite. The only runtime libraries are the Supabase client, an icon set and confetti for your PRs.</p></div>
-        <div class="bg-bg p-6"><p class="font-mono text-xs text-accent">SERVICE WORKER</p><h3 class="mt-2 text-lg font-bold">The whole app is cached on install</h3><p class="mt-2 text-sm text-muted">Every file in the build is precached, so the app opens with no connection. Updates download only the files that changed.</p></div>
-        <div class="bg-bg p-6"><p class="font-mono text-xs text-accent">SYNC THAT MERGES</p><h3 class="mt-2 text-lg font-bold">Conflicts resolved, not lost</h3><p class="mt-2 text-sm text-muted">Sessions merge by id, deletions sync as tombstones, and the server sets timestamps, so a phone with the wrong clock can't hide a change.</p></div>
+      <div class="reveal mt-10 grid gap-px overflow-hidden rounded-3xl border border-line bg-line sm:grid-cols-2">
+        <div class="bg-bg p-6 transition-colors hover:bg-raised"><p class="font-mono text-xs text-accent">LOCAL-FIRST</p><h3 class="mt-2 text-lg font-bold">IndexedDB, not a loading spinner</h3><p class="mt-2 text-sm text-muted">Workout history and the nutrition log live in IndexedDB on your device, with no 5 MB cap. Reads come from memory, so screens render instantly.</p></div>
+        <div class="bg-bg p-6 transition-colors hover:bg-raised"><p class="font-mono text-xs text-accent">NO FRAMEWORK</p><h3 class="mt-2 text-lg font-bold">Vanilla JavaScript, three dependencies</h3><p class="mt-2 text-sm text-muted">Plain ES modules bundled by Vite. The only runtime libraries are the Supabase client, an icon set and confetti for your PRs.</p></div>
+        <div class="bg-bg p-6 transition-colors hover:bg-raised"><p class="font-mono text-xs text-accent">SERVICE WORKER</p><h3 class="mt-2 text-lg font-bold">The whole app is cached on install</h3><p class="mt-2 text-sm text-muted">Every file in the build is precached, so the app opens with no connection. Updates download only the files that changed.</p></div>
+        <div class="bg-bg p-6 transition-colors hover:bg-raised"><p class="font-mono text-xs text-accent">SYNC THAT MERGES</p><h3 class="mt-2 text-lg font-bold">Conflicts resolved, not lost</h3><p class="mt-2 text-sm text-muted">Sessions merge by id, deletions sync as tombstones, and the server sets timestamps, so a phone with the wrong clock can't hide a change.</p></div>
       </div>
     </div>
   </section>
@@ -408,32 +463,32 @@
   <!-- ============ INSTALL ============ -->
   <section id="install" class="border-t border-line">
     <div class="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-      <p class="eyebrow">Install</p>
+      <p class="eyebrow reveal">Install</p>
       <h2 class="display mt-3 max-w-2xl text-4xl font-extrabold sm:text-5xl">On your home screen in three taps.</h2>
       <p class="mt-4 max-w-2xl text-muted">No app store. Open the app in your browser, add it once, and it launches full screen like any other app. <span id="platformHint"></span></p>
-      <div class="mt-12 grid gap-5 md:grid-cols-3">
-        <article data-platform="ios" class="install-card rounded-3xl border border-line bg-surface p-6">
+      <div class="reveal mt-12 grid gap-5 md:grid-cols-3">
+        <article data-platform="ios" class="install-card lift rounded-3xl border border-line bg-surface p-6">
           <h3 class="text-lg font-bold">iPhone &amp; iPad</h3><p class="text-sm text-muted">Safari</p>
           <ol class="mt-5 grid gap-4 text-sm">
-            <li class="flex gap-3"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-line font-mono text-xs">1</span><span>Open <a class="text-accent underline-offset-4 hover:underline" href="https://track-sr-8532.vercel.app/">the app</a> in Safari.</span></li>
-            <li class="flex gap-3"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-line font-mono text-xs">2</span><span>Tap <strong>Share</strong> <span aria-hidden="true">⬆︎</span> in the toolbar.</span></li>
-            <li class="flex gap-3"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-line font-mono text-xs">3</span><span>Choose <strong>Add to Home Screen</strong>, then <strong>Add</strong>.</span></li>
+            <li class="flex gap-3"><span class="accent-soft grid h-7 w-7 shrink-0 place-items-center rounded-full font-mono text-xs font-semibold text-accent">1</span><span>Open <a class="text-accent underline-offset-4 hover:underline" href="https://track-sr-8532.vercel.app/">the app</a> in Safari.</span></li>
+            <li class="flex gap-3"><span class="accent-soft grid h-7 w-7 shrink-0 place-items-center rounded-full font-mono text-xs font-semibold text-accent">2</span><span>Tap <strong>Share</strong> <span aria-hidden="true">⬆︎</span> in the toolbar.</span></li>
+            <li class="flex gap-3"><span class="accent-soft grid h-7 w-7 shrink-0 place-items-center rounded-full font-mono text-xs font-semibold text-accent">3</span><span>Choose <strong>Add to Home Screen</strong>, then <strong>Add</strong>.</span></li>
           </ol>
         </article>
-        <article data-platform="android" class="install-card rounded-3xl border border-line bg-surface p-6">
+        <article data-platform="android" class="install-card lift rounded-3xl border border-line bg-surface p-6">
           <h3 class="text-lg font-bold">Android</h3><p class="text-sm text-muted">Chrome</p>
           <ol class="mt-5 grid gap-4 text-sm">
-            <li class="flex gap-3"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-line font-mono text-xs">1</span><span>Open <a class="text-accent underline-offset-4 hover:underline" href="https://track-sr-8532.vercel.app/">the app</a> in Chrome.</span></li>
-            <li class="flex gap-3"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-line font-mono text-xs">2</span><span>Tap the <strong>⋮</strong> menu in the top corner.</span></li>
-            <li class="flex gap-3"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-line font-mono text-xs">3</span><span>Tap <strong>Install app</strong>, then <strong>Install</strong>.</span></li>
+            <li class="flex gap-3"><span class="accent-soft grid h-7 w-7 shrink-0 place-items-center rounded-full font-mono text-xs font-semibold text-accent">1</span><span>Open <a class="text-accent underline-offset-4 hover:underline" href="https://track-sr-8532.vercel.app/">the app</a> in Chrome.</span></li>
+            <li class="flex gap-3"><span class="accent-soft grid h-7 w-7 shrink-0 place-items-center rounded-full font-mono text-xs font-semibold text-accent">2</span><span>Tap the <strong>⋮</strong> menu in the top corner.</span></li>
+            <li class="flex gap-3"><span class="accent-soft grid h-7 w-7 shrink-0 place-items-center rounded-full font-mono text-xs font-semibold text-accent">3</span><span>Tap <strong>Install app</strong>, then <strong>Install</strong>.</span></li>
           </ol>
         </article>
-        <article data-platform="desktop" class="install-card rounded-3xl border border-line bg-surface p-6">
+        <article data-platform="desktop" class="install-card lift rounded-3xl border border-line bg-surface p-6">
           <h3 class="text-lg font-bold">Desktop</h3><p class="text-sm text-muted">Chrome or Edge</p>
           <ol class="mt-5 grid gap-4 text-sm">
-            <li class="flex gap-3"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-line font-mono text-xs">1</span><span>Open <a class="text-accent underline-offset-4 hover:underline" href="https://track-sr-8532.vercel.app/">the app</a> in Chrome or Edge.</span></li>
-            <li class="flex gap-3"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-line font-mono text-xs">2</span><span>Click the <strong>install icon</strong> at the right of the address bar.</span></li>
-            <li class="flex gap-3"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-line font-mono text-xs">3</span><span>Click <strong>Install</strong>. It opens in its own window.</span></li>
+            <li class="flex gap-3"><span class="accent-soft grid h-7 w-7 shrink-0 place-items-center rounded-full font-mono text-xs font-semibold text-accent">1</span><span>Open <a class="text-accent underline-offset-4 hover:underline" href="https://track-sr-8532.vercel.app/">the app</a> in Chrome or Edge.</span></li>
+            <li class="flex gap-3"><span class="accent-soft grid h-7 w-7 shrink-0 place-items-center rounded-full font-mono text-xs font-semibold text-accent">2</span><span>Click the <strong>install icon</strong> at the right of the address bar.</span></li>
+            <li class="flex gap-3"><span class="accent-soft grid h-7 w-7 shrink-0 place-items-center rounded-full font-mono text-xs font-semibold text-accent">3</span><span>Click <strong>Install</strong>. It opens in its own window.</span></li>
           </ol>
         </article>
       </div>
@@ -448,34 +503,34 @@
         <h2 class="display mt-3 text-4xl font-extrabold sm:text-5xl">Questions lifters ask.</h2>
         <p class="mt-4 text-muted">Something else? <a class="text-accent underline-offset-4 hover:underline" href="https://github.com/SKR18156592/IronTrack/issues">Open an issue on GitHub</a>.</p>
       </div>
-      <div class="divide-y divide-line border-y border-line">
+      <div class="reveal divide-y divide-line border-y border-line">
         <details class="group py-5" open>
-          <summary class="flex items-center justify-between gap-4 font-semibold">Does it really work offline?<span class="faq-plus text-2xl text-accent" aria-hidden="true">+</span></summary>
+          <summary class="flex items-center justify-between gap-4 font-semibold transition-colors hover:text-accent">Does it really work offline?<span class="faq-plus text-2xl text-accent" aria-hidden="true">+</span></summary>
           <p class="mt-3 text-muted">Yes. After your first visit the whole app is stored on your device. You can open it, log a full session, edit your plan and check your history with no connection. Changes upload when you're back online.</p>
         </details>
         <details class="py-5">
-          <summary class="flex items-center justify-between gap-4 font-semibold">How does sync between devices work?<span class="faq-plus text-2xl text-accent" aria-hidden="true">+</span></summary>
+          <summary class="flex items-center justify-between gap-4 font-semibold transition-colors hover:text-accent">How does sync between devices work?<span class="faq-plus text-2xl text-accent" aria-hidden="true">+</span></summary>
           <p class="mt-3 text-muted">Sign in with the same email on each device. Changes upload within a second of your last edit and other devices pick them up right away, or when they next come online. If two devices log sessions while out of touch, both sessions are kept. A deletion always syncs.</p>
         </details>
         <details class="py-5">
-          <summary class="flex items-center justify-between gap-4 font-semibold">Do I need an account?<span class="faq-plus text-2xl text-accent" aria-hidden="true">+</span></summary>
+          <summary class="flex items-center justify-between gap-4 font-semibold transition-colors hover:text-accent">Do I need an account?<span class="faq-plus text-2xl text-accent" aria-hidden="true">+</span></summary>
           <p class="mt-3 text-muted">No. Tap <strong>Continue without an account</strong> and everything stays on your device. You can sign in later from your profile to start syncing.</p>
         </details>
         <details class="py-5">
-          <summary class="flex items-center justify-between gap-4 font-semibold">Who can see my data?<span class="faq-plus text-2xl text-accent" aria-hidden="true">+</span></summary>
+          <summary class="flex items-center justify-between gap-4 font-semibold transition-colors hover:text-accent">Who can see my data?<span class="faq-plus text-2xl text-accent" aria-hidden="true">+</span></summary>
           <p class="mt-3 text-muted">Without an account, nobody: your workouts and logs never leave your device. With an account, your data is stored in Supabase, and row-level security lets only your account read or write it. There are no ads or tracking scripts. The <a class="text-accent underline-offset-4 hover:underline" href="/privacy.html">privacy policy</a> has the details.</p>
         </details>
         <details class="py-5">
-          <summary class="flex items-center justify-between gap-4 font-semibold">What does it cost? Is it open source?<span class="faq-plus text-2xl text-accent" aria-hidden="true">+</span></summary>
+          <summary class="flex items-center justify-between gap-4 font-semibold transition-colors hover:text-accent">What does it cost? Is it open source?<span class="faq-plus text-2xl text-accent" aria-hidden="true">+</span></summary>
           <p class="mt-3 text-muted">IronTrack is free to use today. Logging workouts, offline use, your history and exports stay free. Optional paid extras, such as tools for coaches, may come later. You'll see the price before you pay for anything, and nothing you use now will move behind a paywall.</p>
           <p class="mt-3 text-muted">The source code is <a class="text-accent underline-offset-4 hover:underline" href="https://github.com/SKR18156592/IronTrack">on GitHub</a> under the MIT license, so you can also host your own copy with your own Supabase project.</p>
         </details>
         <details class="py-5">
-          <summary class="flex items-center justify-between gap-4 font-semibold">Can I get my data out?<span class="faq-plus text-2xl text-accent" aria-hidden="true">+</span></summary>
+          <summary class="flex items-center justify-between gap-4 font-semibold transition-colors hover:text-accent">Can I get my data out?<span class="faq-plus text-2xl text-accent" aria-hidden="true">+</span></summary>
           <p class="mt-3 text-muted">Any time. Settings exports your workout history as JSON or CSV, and a full backup you can import on another device.</p>
         </details>
         <details class="py-5">
-          <summary class="flex items-center justify-between gap-4 font-semibold">Does it work on iPhone?<span class="faq-plus text-2xl text-accent" aria-hidden="true">+</span></summary>
+          <summary class="flex items-center justify-between gap-4 font-semibold transition-colors hover:text-accent">Does it work on iPhone?<span class="faq-plus text-2xl text-accent" aria-hidden="true">+</span></summary>
           <p class="mt-3 text-muted">Yes. Add it to your home screen from Safari and it runs full screen, offline included. iPhones don't let web apps vibrate, so the rest timer beeps instead.</p>
         </details>
       </div>
@@ -484,14 +539,22 @@
 
   <!-- ============ CLOSING CTA ============ -->
   <section class="border-t border-line">
-    <div class="mx-auto flex max-w-6xl flex-col items-start justify-between gap-8 px-4 py-20 sm:px-6 md:flex-row md:items-center">
-      <div>
-        <h2 class="display text-4xl font-extrabold sm:text-5xl">Your next session starts here.</h2>
-        <p class="mt-3 text-muted">Free. Works offline. Takes ten seconds to open.</p>
-      </div>
-      <div class="flex flex-wrap gap-3">
-        <a href="https://track-sr-8532.vercel.app/" class="rounded-full bg-accent px-6 py-3 font-bold text-ink hover:brightness-110">Launch web app</a>
-        <a href="#install" class="rounded-full border border-line bg-surface px-6 py-3 font-semibold hover:border-muted">How to install</a>
+    <div class="mx-auto max-w-6xl px-4 py-24 sm:px-6">
+      <div class="reveal card-edge relative overflow-hidden rounded-[2rem] px-6 py-16 text-center sm:px-12 sm:py-20" style="--card-bg: var(--surface)">
+        <div class="grid-paper pointer-events-none absolute inset-0" style="mask-image: radial-gradient(ellipse at 50% 0%, black 10%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse at 50% 0%, black 10%, transparent 70%)" aria-hidden="true"></div>
+        <div class="aurora -top-32 left-1/2 h-[320px] w-[560px] -translate-x-1/2 opacity-30" style="background: var(--accent)" aria-hidden="true"></div>
+        <div class="relative">
+          <svg class="mx-auto" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.2" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z" /></svg>
+          <h2 class="display mx-auto mt-6 max-w-2xl text-4xl font-extrabold sm:text-6xl">Your next session <span class="text-gradient">starts here.</span></h2>
+          <p class="mt-4 text-lg text-muted">Free. Works offline. Takes ten seconds to open.</p>
+          <div class="mt-9 flex flex-wrap justify-center gap-3">
+            <a href="https://track-sr-8532.vercel.app/" class="btn-glow inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3.5 font-bold text-ink hover:brightness-110">
+              Launch web app
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+            </a>
+            <a href="#install" class="rounded-full border border-line bg-bg px-7 py-3.5 font-semibold hover:border-muted">How to install</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -627,12 +690,26 @@
     fill(presets.top(12));
   })();
 
+  // ---- Ease sections in as they scroll into view.
+  (() => {
+    const els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) return els.forEach(el => el.classList.add('in'));
+    const io = new IntersectionObserver(entries => entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    }), { rootMargin: '0px 0px -8% 0px' });
+    els.forEach(el => io.observe(el));
+  })();
+
   // ---- Install guide: highlight the card for the visitor's platform.
   (() => {
     const ua = navigator.userAgent;
     const p = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1) ? 'ios' : /Android/.test(ua) ? 'android' : 'desktop';
     const card = document.querySelector(`.install-card[data-platform="${p}"]`);
-    if (card) { card.style.borderColor = 'var(--accent)'; card.insertAdjacentHTML('beforeend', '<p class="mt-5 font-mono text-xs text-accent">Your device</p>'); }
+    if (card) {
+      card.style.borderColor = 'var(--accent)';
+      card.style.boxShadow = '0 24px 60px -28px var(--accent-glow)';
+      card.insertAdjacentHTML('afterbegin', '<span class="chip accent-soft float-right border-transparent text-accent">Your device</span>');
+    }
   })();
 </script>
   </body>
