@@ -1,0 +1,18 @@
+{
+  "name": "irontrack-landing",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Landing page for IronTrack, the offline-first workout tracker",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tailwindcss -i src/input.css -o public/styles.css --minify",
+    "dev": "tailwindcss -i src/input.css -o public/styles.css --watch",
+    "preview": "npx --yes serve public"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.19"
+  }
+}
