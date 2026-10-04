@@ -47,7 +47,7 @@ directory (`public`), so there's nothing to configure.
 - The double-progression demo mirrors `suggestNext()` in the app's `src/performance.js`. If that rule
   changes, update the script at the bottom of `public/index.html` to match.
 - Keep the copy accurate to what the app does; the FAQ and feature lists describe real behaviour.
-- The privacy policy names every service that processes user data (Supabase, Vercel, Cloudflare Turnstile,
+- The privacy policy names every service that processes user data (Supabase, Brevo, Vercel, Cloudflare Turnstile,
   Google Fonts) and what the app stores. Update it, and its effective date, when that changes: a new
   provider, analytics, payments, or new kinds of data.
 
