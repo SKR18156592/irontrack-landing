@@ -21,7 +21,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/styles.css?v=2" />
     <script>document.documentElement.classList.add('js')</script>
   </head>
   <body>
@@ -83,16 +83,17 @@
       </div>
 
       <!-- Hero phone: the workout screen -->
-      <div class="relative flex justify-center lg:justify-end">
-        <!-- Floating callouts (decorative; the phone carries the same information) -->
-        <div class="float glass absolute left-0 top-16 z-10 hidden items-center gap-3 rounded-2xl border border-line px-4 py-3 shadow-2xl sm:flex lg:-left-6" aria-hidden="true">
-          <span class="accent-soft grid h-9 w-9 place-items-center rounded-xl text-lg">🏆</span>
-          <span><span class="block text-sm font-bold">New PR</span><span class="block font-mono text-xs text-muted tnum">82.5 kg × 10</span></span>
-        </div>
-        <div class="float float-delay glass absolute bottom-28 left-0 z-10 hidden items-center gap-3 rounded-2xl border border-line px-4 py-3 shadow-2xl sm:flex lg:-left-10" aria-hidden="true">
-          <span class="grid h-9 w-9 place-items-center rounded-xl" style="background: rgba(251, 191, 36, .14)"><span class="h-2.5 w-2.5 rounded-full bg-warn"></span></span>
-          <span><span class="block text-sm font-bold">No signal</span><span class="block font-mono text-xs text-muted">Saved on device ✓</span></span>
-        </div>
+      <div class="flex justify-center lg:justify-end">
+        <div class="relative w-full max-w-[300px]">
+          <!-- Floating callouts (decorative; the phone carries the same information) -->
+          <div class="float glass absolute right-[calc(100%-24px)] top-20 z-10 hidden items-center gap-3 whitespace-nowrap rounded-2xl border border-line px-4 py-3 shadow-2xl md:flex lg:hidden xl:flex" aria-hidden="true">
+            <span class="accent-soft grid h-9 w-9 place-items-center rounded-xl text-lg">🏆</span>
+            <span><span class="block text-sm font-bold">New PR</span><span class="block font-mono text-xs text-muted tnum">82.5 kg × 10</span></span>
+          </div>
+          <div class="float float-delay glass absolute bottom-32 right-[calc(100%-24px)] z-10 hidden items-center gap-3 whitespace-nowrap rounded-2xl border border-line px-4 py-3 shadow-2xl md:flex lg:hidden xl:flex" aria-hidden="true">
+            <span class="grid h-9 w-9 place-items-center rounded-xl" style="background: rgba(251, 191, 36, .14)"><span class="h-2.5 w-2.5 rounded-full bg-warn"></span></span>
+            <span><span class="block text-sm font-bold">No signal</span><span class="block font-mono text-xs text-muted">Saved on device ✓</span></span>
+          </div>
         <div class="phone glow" role="img" aria-label="IronTrack's workout screen: a session timer, an exercise card with today's suggested weight, and logged sets with a PR badge">
           <div class="phone-screen">
             <div class="flex items-center justify-between border-b border-line px-4 pb-2 pt-4">
@@ -133,6 +134,7 @@
               <span class="text-[10px] font-semibold uppercase tracking-widest">Rest</span><span class="text-lg font-bold tnum">01:28</span>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </div>
@@ -361,8 +363,8 @@
           <figcaption class="text-center text-sm text-muted"><strong class="text-fg">Nutrition.</strong> Targets, meal timing and the daily log.</figcaption>
         </figure>
         <!-- Analytics -->
-        <figure class="flex shrink-0 basis-[78%] flex-col items-center gap-4 sm:basis-[46%] md:basis-auto">
-          <div class="phone phone-short glow lift md:-translate-y-8" role="img" aria-label="Analytics screen with weekly volume per muscle group and an estimated 1RM trend">
+        <figure class="md:-translate-y-8 flex shrink-0 basis-[78%] flex-col items-center gap-4 sm:basis-[46%] md:basis-auto">
+          <div class="phone phone-short glow lift" role="img" aria-label="Analytics screen with weekly volume per muscle group and an estimated 1RM trend">
             <div class="phone-screen p-4">
               <p class="font-bold">Analytics</p>
               <p class="text-[10px] text-muted">Volume per muscle group · last 7 days</p>
